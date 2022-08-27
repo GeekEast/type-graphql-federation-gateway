@@ -3,7 +3,7 @@ import "reflect-metadata"
 import { generateGraphqlServer } from "./bootstrap/apollo.bootstrap"
 import { start } from "./bootstrap/express.bootstrap"
 import { registerProviders } from "./providers"
-import { startNodeProcessErrorMonitor } from "./utils/errors/nodeMonitor.util"
+import { startNodeProcessErrorMonitor } from "./providers/utils/errors/nodeMonitor.util"
 
 const main = async () => {
   // start monitoring node process errors
@@ -13,7 +13,7 @@ const main = async () => {
   await registerProviders()
 
   // generate graphql middleware
-  const graphqlServer = generateGraphqlServer()
+  const graphqlServer = await generateGraphqlServer()
 
   // start express server
   await start(graphqlServer)

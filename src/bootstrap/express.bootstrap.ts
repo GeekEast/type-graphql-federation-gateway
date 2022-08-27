@@ -3,8 +3,8 @@ import express, { json, urlencoded } from "express"
 import HTTP_CODE from "http-status-codes"
 
 import { CONSTANT, NODE_ENV, SERVICE_PORT } from "../enum"
-import { generateCORSoptions } from "../utils/cors/cors.util"
-import { Logger } from "../utils/logger/logger.util"
+import { generateCORSoptions } from "../providers/utils/cors/cors.util"
+import { Logger } from "../providers/utils/logger/logger.util"
 
 export const start = async (graphqlServer: ApolloServer<ExpressContext>) => {
   // create express app

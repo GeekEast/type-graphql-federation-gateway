@@ -3,7 +3,7 @@ import "reflect-metadata"
 import deepEqual from "deep-equal"
 import prettyjson from "prettyjson"
 
-import { resetContainer } from "./utils/di/di.util"
+import { resetContainer } from "./providers/utils/di/di.util"
 
 beforeEach(() => {
   jest.resetAllMocks()
